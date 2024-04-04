@@ -39,7 +39,7 @@
     ${options['site_metas']}
 
     <link href="${base}/dist/vendors/pace/themes/pace-theme-minimal.css" rel="stylesheet"/>
-    <link href="${base}/dist/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
     <link href="${base}/dist/css/editor.css" rel="stylesheet"/>
     <link href="${base}/dist/css/plugins.css" rel="stylesheet"/>
@@ -52,7 +52,7 @@
 
     <script src="${base}/dist/js/jquery.min.js"></script>
     <script src="${base}/dist/vendors/layer/layer.js"></script>
-    <script src="${base}/dist/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
         var _MTONS = _MTONS || {};

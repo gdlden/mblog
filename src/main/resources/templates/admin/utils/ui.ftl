@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="http://mtons.com/dist/images/logo.png"/>
 
     <!-- Bootstrap -->
-    <link href="${base}/dist/vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="${base}/dist/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
@@ -31,7 +31,7 @@
     <script src="${base}/dist/js/jquery.min.js"></script>
     <script src="${base}/dist/js/plugins.js"></script>
     <!-- Bootstrap -->
-    <script src="${base}/dist/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src='${base}/dist/vendors/jquery-validation/jquery.validate.min.js'></script>
     <script src='${base}/dist/vendors/jquery-validation/additional-methods.js'></script>
     <script src='${base}/dist/vendors/jquery-validation/localization/messages_zh.min.js'></script>

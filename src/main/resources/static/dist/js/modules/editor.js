@@ -47,7 +47,7 @@ define(function(require, exports, module) {
                 ],
                 // entity_encoding: 'raw',
                 content_css: [
-                    _MTONS.BASE_PATH + '/dist/vendors/bootstrap/css/bootstrap.min.css',
+                    'https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css',
                     _MTONS.BASE_PATH + '/dist/css/editor.css',
                 ],
                 setup: function(editor) {
