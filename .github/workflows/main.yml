@@ -41,7 +41,7 @@ jobs:
           command: cd /root/mblog && run.sh stop && rm -rf target
           host: ${{ secrets.HOST }}
           username: root
-          port: 9969
+          port: 53595
           privateKey: ${{ secrets.PRIVATE_KEY}}
       - name: 上传jar包和启动脚本到服务器中
         uses: garygrossgarten/github-action-ssh@release
@@ -49,5 +49,13 @@ jobs:
           command: scp -r -o StrictHostKeyChecking=no ./target/mblog-latest.jar root@${{secrets.HOST}}:/root/mblog/target
           host: ${{ secrets.HOST }}
           username: root
-          port: 9969
+          port: 53595
+          privateKey: ${{ secrets.PRIVATE_KEY}}
+      - name: 启动项目
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /root/mblog && run.sh start
+          host: ${{ secrets.HOST }}
+          username: root
+          port: 53595
           privateKey: ${{ secrets.PRIVATE_KEY}}
