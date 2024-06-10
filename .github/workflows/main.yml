@@ -46,7 +46,7 @@ jobs:
       - name: 上传jar包和启动脚本到服务器中
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: scp -r -i $secrets.PRIVATE_KEY -P 53595 -o StrictHostKeyChecking=no ./target/mblog-latest.jar root@${{secrets.HOST}}:/root/mblog/target
+          command: scp -r -i ${{ secrets.PRIVATE_KEY }} -P 53595 -o StrictHostKeyChecking=no ./target/mblog-latest.jar root@${{secrets.HOST}}:/root/mblog/target
           host: ${{ secrets.HOST }}
           username: root
           port: 53595
