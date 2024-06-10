@@ -38,7 +38,7 @@ jobs:
       - name: 删除旧的jar包以及运行脚本
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /root/mblog && ./run.sh stop && rm -rf target
+          command: cd /root/mblog && ./run.sh stop && rm -rf target/**
           host: ${{ secrets.HOST }}
           username: root
           port: 53595
@@ -47,7 +47,7 @@ jobs:
         run: |
           echo "${{ secrets.PRIVATE_KEY }}" > ssh_key
           chmod 600 ssh_key
-          scp -r -i ssh_key -P 53595 -o StrictHostKeyChecking=no ./target/mblog-latest.jar root@${{secrets.HOST}}:/root/mblog/target
+          scp -r -i ssh_key -P 53595 -o StrictHostKeyChecking=no ./target/mblog-latest.jar root@${{secrets.HOST}}:/root/mblog/target/
         shell: bash
       - name: 启动项目
         uses: garygrossgarten/github-action-ssh@release
