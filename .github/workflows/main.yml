@@ -38,7 +38,7 @@ jobs:
       - name: 删除旧的jar包以及运行脚本
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /root/mblog && run.sh stop && rm -rf target
+          command: cd /root/mblog && ./run.sh stop && rm -rf target
           host: ${{ secrets.HOST }}
           username: root
           port: 53595
@@ -54,7 +54,7 @@ jobs:
       - name: 启动项目
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /root/mblog && run.sh start
+          command: cd /root/mblog && ./run.sh start
           host: ${{ secrets.HOST }}
           username: root
           port: 53595
