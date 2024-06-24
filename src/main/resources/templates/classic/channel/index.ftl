@@ -1,6 +1,6 @@
 <@layout.extends name="/inc/layout.ftl">
     <@layout.put block="title">
-        <title>频道列表</title>
+        <title>${channel.name}</title>
     </@layout.put>
 
     <@layout.put block="contents">
