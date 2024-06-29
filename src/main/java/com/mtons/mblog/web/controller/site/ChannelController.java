@@ -16,7 +16,10 @@ import com.mtons.mblog.modules.entity.Channel;
 import com.mtons.mblog.modules.entity.PostAttribute;
 import com.mtons.mblog.modules.service.ChannelService;
 import com.mtons.mblog.modules.service.PostService;
+import com.mtons.mblog.utils.CacheUtils;
 import com.mtons.mblog.web.controller.BaseController;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,8 +28,12 @@ import org.springframework.util.Assert;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Arrays;
 
 /**
  * Channel 主页
@@ -67,7 +74,22 @@ public class ChannelController extends BaseController {
 			post.setContent(MarkdownUtils.renderMarkdown(view.getContent()));
 			view = post;
 		}
-		postService.identityViews(id);
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+		Cookie[] cookies = request.getCookies();
+		boolean flag = false;
+		if (ObjectUtils.isNotEmpty(cookies)) {
+			for (Cookie cookie : cookies) {
+				if ("__uuid".equals(cookie.getName())) {
+					String s = CacheUtils.get(cookie.getValue());
+					if (StringUtils.isNotBlank(s)) {
+						flag = true;
+					}
+				}
+			}
+		}
+		if (!flag) {
+			postService.identityViews(id);
+		}
 		model.put("view", view);
 		return view(Views.POST_VIEW);
 	}
