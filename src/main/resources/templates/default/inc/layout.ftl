@@ -39,7 +39,7 @@
     ${options['site_metas']}
 
     <link href="${base}/dist/vendors/pace/themes/pace-theme-minimal.css" rel="stylesheet"/>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.bootcdn.net/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 
     <link href="${base}/theme/default/dist/css/style.css" rel="stylesheet"/>
     <link href="${base}/dist/css/editor.css" rel="stylesheet"/>

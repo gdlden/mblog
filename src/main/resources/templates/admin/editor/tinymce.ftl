@@ -39,7 +39,7 @@ $(function () {
             {text: 'C++', value: 'cpp'}
         ],
         content_css: [
-            'https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css',
+            'https://cdn.bootcdn.net/bootstrap/3.3.7/css/bootstrap.min.css',
             '${base}/dist/css/editor.css',
         ],
         setup: function(editor) {

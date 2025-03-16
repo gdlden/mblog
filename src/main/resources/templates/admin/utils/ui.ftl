@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="http://mtons.com/dist/images/logo.png"/>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcdn.net/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="${base}/dist/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
